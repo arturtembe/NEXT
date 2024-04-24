@@ -26,7 +26,7 @@ export default function dadosimc(){
     async function addInsert(e:any){
         e.preventDefault();
     
-        const endpoint=`http://localhost:3000/db/controllers/imc/calcimc/addCalcImcAPI.php`;
+        const endpoint=`https://arturtembe-my-project.000webhostapp.com/db/controllers/imc/calcimc/addCalcImcAPI.php`;
         //const endpoint=`http://localhost:3000/db/controllers/teste/api.php`;
 
         //const form:any=document.getElementById('form');

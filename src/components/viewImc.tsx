@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 
 const view=()=>{
     const [resp,setResp]=useState<any[]>([]);
-    const endpoint:string=`http://localhost:3000/`;
+    //const endpoint:string=`http://localhost:3000/`;
+    const endpoint:string=`https://arturtembe-my-project.000webhostapp.com/`;
 
     function obter(){
 
