@@ -1,0 +1,130 @@
+
+
+.form_novo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    margin: 40px 0px 0px 40px;
+    background-color: transparent;
+}
+
+.elementosForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid #777;
+    padding: 5px 20px 15px 20px;
+    background-color: #fff;
+    box-shadow: 4px 4px 3px 4px rgba(0, 0, 0, 0.4);
+    border-radius:  15px;
+}
+
+/* Campo form */
+.campoForm{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px 20px;
+}
+
+.campoForm label{
+    display: inline-block;
+    width: 100%;
+    padding: 10px 10px 10px 5px;
+}
+.campoForm input{
+    width: 90%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+/* Botoes Form */
+.botoesForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.botoesForm button{
+    /* background-color: #fff; */
+    padding: 10px 40px;
+    border-radius: 15px;
+    margin-left: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &[type="submit"]{
+        background-color: #248;
+        color: #fff;
+    }
+    &[type="reset"]{
+        background-color: #922;
+        color: #fff;
+    }
+}
+
+/* Sucess */
+.sms_result{
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    transition: height 0.5s ease-in-out;
+}
+.sms_result span{
+    font-size: 16px;
+
+    &:nth-child(1){
+        font-weight: bold;
+    }
+    &:nth-child(2):hover{
+        cursor: pointer;
+        height: 100%;
+        color: #f00;
+        padding: 2px 5px;
+        background-color: #ddd;
+        border-radius: 50%;
+        text-align: center;
+        display: inline-block;
+        width: 30px;
+        font-weight: bold;
+    }
+}
+.sms_result.sucess{
+    background-color: #248;
+    color: #fff;
+}
+.sms_result.cancel{
+    background-color: #922;
+    color: #fff;
+}
+.sms_result.error{
+    background-color: #174;
+    color: #fff;
+}
+
+@media (max-width:580px) {
+    body{
+        background-color: #ddd;
+    }
+    .form_novo{
+        /* margin-top: 40%; */
+    }
+    .elementosForm{
+        height: 90%;
+        width: 100%;
+        flex-direction: column;
+    }
+    .campoForm{
+        width: 100%;
+    }
+}

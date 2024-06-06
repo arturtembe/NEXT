@@ -1,0 +1,23 @@
+
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-bottom: 1px solid #f00; */
+    /* padding: 20px 0; */
+    background-color: #248;
+}
+
+.cabecalho h1{
+    font-size: 72px;
+    color: #f0baba;
+    font-weight: 700;
+}
+.cabecalho span{
+    margin-top: 40px;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+

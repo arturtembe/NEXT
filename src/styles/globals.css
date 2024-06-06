@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+}
+body{
+  background-color: #ddd;
+}
+
+main{
+  position: relative;
+}
+
+.popup{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  /* opacity: 0.5; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Headers */
+@import url('./components/header.css');
+/* Menu */
+@import url('./components/menu.css');
+/* Main */
+@import url('./components/main.css');
+
