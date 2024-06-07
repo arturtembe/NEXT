@@ -1,6 +1,8 @@
 import { useRouter } from "next/router"
 import { useEffect} from "react";
 import {addDadosImc} from "@/controllers/dadosImcController";
+import endpointHelpers from "@/helpers/endepoint.helper";
+import { HeadComponents } from "@/components/header";
 
 
 export default function dadosimc(){
@@ -26,20 +28,20 @@ export default function dadosimc(){
     async function addInsert(e:any){
         e.preventDefault();
     
-        const endpoint=`https://arturtembe-my-project.000webhostapp.com/db/controllers/imc/calcimc/addCalcImcAPI.php`;
+        //const endpoint=`https://arturtembe-my-project.000webhostapp.com/db/controllers/imc/calcimc/addCalcImcAPI.php`;
         //const endpoint=`http://localhost:3000/db/controllers/teste/api.php`;
 
         //const form:any=document.getElementById('form');
         
         //const dados:string=`${nome},${peso},${altura},${imc},${date}`;
 
-        const formData=new FormData(e.target);
+        const formData:any=new FormData(e.target);
         //formData.set('data',dados);
 
         if(nome!=''){
-            let data=await fetch(endpoint,{
+            let data=await fetch(endpointHelpers.add,{
                 method:"post",
-                body:formData
+                body: new URLSearchParams(formData)
             }).then(res=>res.json())
             .then(res=>{
                 //console.log(res);
@@ -49,7 +51,7 @@ export default function dadosimc(){
                 //return res;
             })
 
-            await data[0].status==1?(location.href="/"):alert('Nao Foi possivel inserir');
+            await data.status==201?(location.href="/"):alert('Nao Foi possivel inserir');
 
         }else{alert("Nome invalido!")};
     };
@@ -57,6 +59,8 @@ export default function dadosimc(){
     return(
         <div className="w-[100%] h-[100vh] overflow-y-auto pl-[2%] pr-[2%] pt-[2%]">
             
+            <HeadComponents title="Gravar Dados" key={2}/>
+
             <header className="header_continue">
                 <a href="/calcimc">
                     <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 -960 960 960" width="40"><path fill="#fff" d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>

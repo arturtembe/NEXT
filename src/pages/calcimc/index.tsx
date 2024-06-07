@@ -1,4 +1,5 @@
 import CompForm from "@/components/CompForm";
+import { HeadComponents } from "@/components/header";
 import TabelaImc from "@/components/TabelaImc";
 import Link from "next/link";
 import { useState } from "react"
@@ -36,6 +37,8 @@ export default function Calcimc(){
     return(
         <div className="w-full h-full flex justify-start items-center flex-col  pl-[2%] pr-[2%] pt-[2%]">
             
+            <HeadComponents title="Calculo de IMC" key={1}/>
+
             <header className="w-full header_continue">
                 <a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 -960 960 960" width="40"><path fill="#fff" d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>

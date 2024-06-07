@@ -5,11 +5,11 @@ interface headProps{
 
 export function HeadComponents(props:headProps){
     return(
-        <head>
+        <div>
             <title>{props.title}</title>
             <meta name="description" content="" />
-            <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+            <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
             <meta name="keywords" content="" />
-        </head>
+        </div>
     )
 }

@@ -1,17 +1,25 @@
+import endpointHelpers from "@/helpers/endepoint.helper";
 import { useEffect, useState } from "react";
+import { HeadComponents } from "./header";
 
 
 const view=()=>{
     const [resp,setResp]=useState<any[]>([]);
     //const endpoint:string=`http://localhost:3000/`;
-    const endpoint:string=`https://arturtembe-my-project.000webhostapp.com/`;
-
+    //const endpoint:string=`https://arturtembe-my-project.000webhostapp.com/`;
+    
     function obter(){
-
-        fetch(`${endpoint}db/controllers/imc/calcimc/getCalcImcAPI.php`)
+        //let end = `${endpoint}db/controllers/imc/calcimc/getCalcImcAPI.php`;
+        fetch(endpointHelpers.view)
         .then(res=>res.json())
         .then(res=>{
-            setResp(res);
+            if(res.status == 201){
+                setResp(res.data);
+            }
+            else{
+                setResp([]);
+            }
+            
             //console.log(res);
             //return res
         }).catch(err=>{console.log("ERROR"+err);})
@@ -41,13 +49,11 @@ const view=()=>{
 
     async function remove(id:number){
         
+        //let end = `${endpoint}db/controllers/imc/calcimc/deleteCalcImcAPI.php`;
         let dataForm=new FormData();
         dataForm.append("id",`${id}`);
 
-        let data=await fetch(`${endpoint}db/controllers/imc/calcimc/deleteCalcImcAPI.php`,{
-            method:"post",
-            body:dataForm
-        })
+        let data=await fetch(`${endpointHelpers.delete}/${id}`)
         .then(res=>res.json())
         .then(res=>{
             //setResp(res);
@@ -55,7 +61,7 @@ const view=()=>{
             return res
         }).catch(err=>{console.log("ERROR"+err);})
 
-        if(await data[0].status==1){
+        if(await data.status==201){
             obter();
         }
     }
@@ -76,6 +82,8 @@ export function ViewIMC(){
 
     return(
         <div className="container mt-10">
+
+            <HeadComponents title="IMC" key={0}/>
 
             <div className="grid box-shadow-local">
                 <div className="gridLinhasTitulos">
