@@ -1,0 +1,153 @@
+
+.element-dvg{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 30px 0px 30px;
+    /* border: 1px solid #f00; */
+    overflow-x: auto;
+}
+
+.dgv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+/* Barra de Pesuisa */
+.form_pesquisa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 20px 0;
+}
+
+.form_pesquisa input{
+    width: 60%;
+    padding: 10px;
+    font-size: 19px;
+    border-radius: 15px 0px 0px 15px;
+    outline: none;
+    border: 1px solid #ddd;
+    color: #000;
+    font-weight: 400;
+}
+
+
+.form_pesquisa select{
+    width: 20%;
+    padding: 14px 15px;
+    outline: none;
+    background-color: #fff;
+    color: #070707;
+    border: 1px solid #ddd;
+}
+
+.form_pesquisa button{
+    width: 15%;
+    padding: 14px 15px;
+    outline: none;
+    background-color: #ddd;
+    border-radius: 0px 15px 15px 0px;
+    &:hover{
+        cursor: pointer;
+        color: #000;
+        font-weight: bold;
+    }
+}
+
+/* Tabelas */
+.dgv .dvgTitulos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    width: 100%; 
+    box-shadow: 4px 4px 3px 4px #ddd;
+}
+
+.dvgTitulos .col{
+    border-right: 1px solid #ddd;
+    width: 20%;
+    height: 100%;
+    padding: 15px 10px;
+    font-size: 17px;
+    color: #000;
+    font-weight: bold;
+    word-wrap: break-word;
+
+    &.col-6{
+        width: 20%;
+    }
+}
+
+/* Dados */
+.dvg-dd{
+    width: 100%;
+}
+.dgv .dvgDados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    height: 100%;
+    border-bottom: 1px solid #ddd;
+}
+.dvgDados .col{
+    border-right: 1px solid #ddd;
+    width: 20%;
+    height: 100%;
+    padding: 15px 10px;
+    font-size: 17px;
+    color: #000;
+    word-wrap: break-word;
+
+    &.col-6{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+    }
+    &.col-6 svg{
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+    &.col-6 svg:nth-child(1) path{
+        fill: #f00;
+    }
+    &.col-6 svg:nth-child(2) path{
+        fill: #00f;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .dvgTitulos .col-5,
+    .dvgTitulos .col-4,
+    .dvgDados .col:nth-child(4),
+    .dvgDados .col:nth-child(3){
+        display: none;
+    }
+
+    .dvgTitulos .col{
+        width: 40%;
+
+        &.col-6{
+            width: 40%;
+        }
+    }
+    .dvgDados .col{
+        width: 40%;
+    
+        &.col-6{
+            width: 40%;
+        }
+    }
+}
+
+
